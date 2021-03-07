@@ -124,7 +124,7 @@
             <div class="section__content section__content--p30">
                 <div class="container-fluid">
                     <div class="header-wrap">
-                        <form class="form-header" action="/post?action=search" method="GET">
+                        <form class="form-header" action="${pageContext.request.contextPath}/post?action=search" method="GET">
                             <input type="hidden" name="action" value="search">
                             <input class="au-input au-input--xl" type="text" name="title" id="title"
                                    placeholder="Search for Title..."/>

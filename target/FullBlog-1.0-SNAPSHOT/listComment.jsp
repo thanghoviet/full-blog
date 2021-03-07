@@ -127,8 +127,8 @@
                         <form class="form-header" action="${pageContext.request.contextPath}/comment?action=search"
                               method="GET">
                             <input type="hidden" name="action" value="search">
-                            <input class="au-input au-input--xl" type="text" name="title" id="title"
-                                   placeholder="Search for Title..."/>
+                            <input class="au-input au-input--xl" type="text" name="content" id="content"
+                                   placeholder="Search for content..."/>
                             <button class="au-btn--submit" type="submit" value="Search">
                                 <i class="zmdi zmdi-search"></i>
                             </button>
@@ -215,12 +215,12 @@
                                                 <td><c:out value="${comment.post.title}"/></td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <button class="item" data-toggle="tooltip" data-placement="top"
-                                                                title="Edit">
-                                                            <a href="${pageContext.request.contextPath}/comment?action=edit&id=${comment.id}">
-                                                                <i class="zmdi zmdi-edit"></i>
-                                                            </a>
-                                                        </button>
+<%--                                                        <button class="item" data-toggle="tooltip" data-placement="top"--%>
+<%--                                                                title="Edit">--%>
+<%--                                                            <a href="${pageContext.request.contextPath}/comment?action=edit&id=${comment.id}">--%>
+<%--                                                                <i class="zmdi zmdi-edit"></i>--%>
+<%--                                                            </a>--%>
+<%--                                                        </button>--%>
                                                         <button class="item" data-toggle="tooltip" data-placement="top"
                                                                 title="Delete">
                                                             <a href="${pageContext.request.contextPath}/comment?action=delete&id=${comment.id}"> <i

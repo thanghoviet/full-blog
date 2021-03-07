@@ -22,6 +22,9 @@ public class PostServlet extends HttpServlet {
     UserDao userDao = new UserDao();
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("utf-8");
+
         String action = request.getParameter("action");
         if (action == null) {
             action = "";
@@ -42,6 +45,9 @@ public class PostServlet extends HttpServlet {
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("utf-8");
+
         String action = request.getParameter("action");
 
         if (action == null) {
@@ -100,8 +106,8 @@ public class PostServlet extends HttpServlet {
             throws SQLException, ServletException, IOException {
         String title = request.getParameter("title");
         if (title != null) {
-            List<Post> listNote = postDao.findByKeyword(title);
-            request.setAttribute("listNote", listNote);
+            List<Post> listPost = postDao.findByKeyword(title);
+            request.setAttribute("listPost", listPost);
             request.setAttribute("mess", "User of title: " + title);
         }
         RequestDispatcher dispatcher = request.getRequestDispatcher("listPost.jsp");

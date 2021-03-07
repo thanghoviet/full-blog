@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface iCRUDdao <T>{
     List<T> getAll() throws SQLException;
-    List<T> findByKeyword(String keyword);
+    List<T> findByKeyword(String keyword) throws SQLException;
 
     T findById(int id);
     boolean add(T t) throws SQLException;

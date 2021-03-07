@@ -100,10 +100,10 @@
             <div class="section__content section__content--p30">
                 <div class="container-fluid">
                     <div class="header-wrap">
-                        <form class="form-header" action="/user?action=search" method="GET">
+                        <form class="form-header" action="${pageContext.request.contextPath}/user?action=search" method="GET">
                             <input type="hidden" name="action" value="search">
-                            <input class="au-input au-input--xl" type="text" name="title" id="title"
-                                   placeholder="Search for Title..."/>
+                            <input class="au-input au-input--xl" type="text" name="alias" id="alias"
+                                   placeholder="Search for Alias..."/>
                             <button class="au-btn--submit" type="submit" value="Search">
                                 <i class="zmdi zmdi-search"></i>
                             </button>

@@ -254,7 +254,7 @@
           <h3 class="heading">Tags</h3>
           <ul class="tags">
             <c:forEach items="${categoryList}" var="type">
-              <li> <a  class="dropdown-item" href="category.jsp" value="${type.id}">${type.title}</a></li>
+              <li> <a  class="dropdown-item" href="${pageContext.request.contextPath}/home?action=listByCategoryId&id=${type.id}" value="${type.id}">${type.title}</a></li>
             </c:forEach>
 
           </ul>

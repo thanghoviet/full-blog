@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDao extends BaseDao implements iCRUDdao<User> {
-    final String SQL_LOGIN = "SELECT * FROM User WHERE email = ? and password = ?";
+    final String SQL_LOGIN = "SELECT * FROM `User` WHERE email = ? and password = ?";
 
-    final String SQL_GET_ALL = "SELECT * FROM User";
-    final String SQL_FIND = "SELECT * FROM User WHERE alias LIKE (?)";
+    final String SQL_GET_ALL = "SELECT * FROM `User`";
+    final String SQL_FIND = "SELECT * FROM User WHERE alias LIKE (?);";
     final String SQL_FIND_ID = "SELECT * FROM User WHERE id = ?";
     final String SQL_ADD = "INSERT INTO `newblogs`.`user`" +
             " ( `email`, `password`, `fullname`, `alias`, `role`, `aboutme`, `image`, `yearofbirth`)" +
@@ -65,7 +65,7 @@ public class UserDao extends BaseDao implements iCRUDdao<User> {
     }
 
     @Override
-    public List<User> findByKeyword(String keyword) {
+    public List<User> findByKeyword(String keyword) throws SQLException {
         List<User> users = new ArrayList<>();
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(SQL_FIND)

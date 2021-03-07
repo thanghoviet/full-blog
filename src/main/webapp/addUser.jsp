@@ -92,8 +92,25 @@
         </div>
         <div class="menu-sidebar__content js-scrollbar1">
             <nav class="navbar-sidebar">
-                <ul class="list-unstyled navbar__list">
-
+                <ul class="navbar-mobile__list list-unstyled">
+                    <c:if test="${sessionScope.account.id == 1}">
+                        <li>
+                            <a href="user?action=listUser">
+                                <i class="fas fa-chart-bar"></i> User Management</a>
+                        </li>
+                    </c:if>
+                    <li>
+                        <a href="post?action=list">
+                            <i class="fas fa-table"></i> Post Management</a>
+                    </li>
+                    <li>
+                        <a href="category?action=list">
+                            <i class="far fa-check-square"></i> Category Management</a>
+                    </li>
+                    <li>
+                        <a href="comment?action=list">
+                            <i class="fas fa-calendar-alt"></i> Comment Management</a>
+                    </li>
                 </ul>
             </nav>
         </div>
